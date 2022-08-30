@@ -1,0 +1,15 @@
+@media screen and (min-width: 1025px) {
+  .summary-content,
+  .skills-content {
+    padding: 4rem 0 7rem 0;
+  }
+
+  .summary-content .hero-section {
+    gap: 6rem;
+    margin-block-end: 10rem;
+  }
+
+  .summary-content .work-experience__jobs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

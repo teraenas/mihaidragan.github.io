@@ -1,0 +1,17 @@
+@media screen and (min-width: 769px) {
+  .summary-content .hero-section {
+    gap: 4rem;
+    margin-block-end: 6rem;
+  }
+
+  .skills-content .technologies-wrapper,
+  .skills-content .tools-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .skills-content .heading-wrapper {
+    display: flex;
+    border-right: 1px solid var(--clr-border);
+  }
+}
