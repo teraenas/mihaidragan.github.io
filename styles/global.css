@@ -25,6 +25,13 @@
   --animation-duration: 600ms;
 }
 
+.dark {
+  --clr-background: var(--clr-bg-dark);
+  --clr-header-background: var(--clr-header-background-dark);
+  --clr-text: var(--clr-text-light);
+  --clr-border: var(--clr-border-dark);
+}
+
 .light {
   --clr-background: var(--clr-bg-light);
   --clr-header-background: var(--clr-header-background-light);
@@ -53,11 +60,6 @@ a:active {
 }
 
 body {
-  --clr-background: var(--clr-bg-dark);
-  --clr-header-background: var(--clr-header-background-dark);
-  --clr-text: var(--clr-text-light);
-  --clr-border: var(--clr-border-dark);
-
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
@@ -143,11 +145,8 @@ h4 {
 .boxed-title {
   display: inline-block;
   padding: 0.75em 1.5em;
-  background-color: var(--clr-theme);
-}
-
-.light .boxed-title {
   color: var(--clr-text-light);
+  background-color: var(--clr-theme);
 }
 
 .styled-title {

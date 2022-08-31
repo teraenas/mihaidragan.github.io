@@ -23,6 +23,29 @@ const observer = new IntersectionObserver(
   { threshold: 0.5 }
 );
 
+const initTheme = () => {
+  const theme = localStorage.getItem('theme');
+  if (!theme) {
+    themeSwitcher.checked = false;
+    setTheme('light');
+  } else {
+    themeSwitcher.checked = theme === 'light' ? false : true;
+    setTheme(theme);
+  }
+};
+
+const setTheme = theme => {
+  localStorage.setItem('theme', theme);
+  const indicator = document.getElementById('theme-switcher__indicator');
+  if (theme === 'light') {
+    document.body.classList.replace('dark', 'light');
+    indicator.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  } else {
+    document.body.classList.replace('light', 'dark');
+    indicator.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+};
+
 addEventListener('DOMContentLoaded', () => {
   const viewNodes = [...document.querySelectorAll('.view')];
 
@@ -40,14 +63,10 @@ addEventListener('DOMContentLoaded', () => {
   );
 
   mainNav = new ScrollProgressNavigation(header);
-  themeSwitcher.checked = false;
+  initTheme();
   scrollTo(0, 0);
 });
 
 themeSwitcher.addEventListener('click', e => {
-  const indicator = document.getElementById('theme-switcher__indicator');
-  indicator.innerHTML = e.target.checked
-    ? '<i class="fa-solid fa-sun"></i>'
-    : '<i class="fa-solid fa-moon"></i>';
-  document.body.classList.toggle('light', e.target.checked);
+  setTheme(e.target.checked === true ? 'dark' : 'light');
 });
