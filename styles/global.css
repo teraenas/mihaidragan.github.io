@@ -5,8 +5,8 @@
 
   --clr-bg-dark: rgb(0, 0, 0);
   --clr-bg-light: rgb(250, 249, 249);
-  --clr-header-background-light: rgba(250 249 249 / 0.9);
-  --clr-header-background-dark: rgba(0 0 0 / 0.9);
+  --clr-header-background-light: rgba(250 249 249 / 0.75);
+  --clr-header-background-dark: rgba(0 0 0 / 0.75);
   --clr-theme: rgb(143, 57, 133);
   --clr-accent: rgb(7, 190, 184);
   --clr-accent-secondary: rgb(249, 166, 32);
@@ -22,7 +22,7 @@
   --initial-scale: 0.5;
   --final-scale: 1;
 
-  --animation-duration: 600ms;
+  --animation-duration: 450ms;
 }
 
 .dark {

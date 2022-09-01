@@ -24,25 +24,21 @@ const observer = new IntersectionObserver(
 );
 
 const initTheme = () => {
-  const theme = localStorage.getItem('theme');
-  if (!theme) {
-    themeSwitcher.checked = false;
-    setTheme('light');
-  } else {
-    themeSwitcher.checked = theme === 'light' ? false : true;
-    setTheme(theme);
-  }
+  let theme = localStorage.getItem('theme');
+  !theme && (theme = 'light');
+  themeSwitcher.checked = theme === 'light' ? false : true;
+  setTheme(theme);
 };
 
 const setTheme = theme => {
   localStorage.setItem('theme', theme);
-  const indicator = document.getElementById('theme-switcher__indicator');
+  // const indicator = document.getElementById('theme-switcher__indicator');
   if (theme === 'light') {
     document.body.classList.replace('dark', 'light');
-    indicator.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    // indicator.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
     document.body.classList.replace('light', 'dark');
-    indicator.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    // indicator.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 };
 
