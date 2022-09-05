@@ -5,6 +5,7 @@
 
   --clr-bg-dark: rgb(0, 0, 0);
   --clr-bg-light: rgb(250, 249, 249);
+  --clr-bg-neutral: rgb(240, 240, 240);
   --clr-header-background-light: rgba(250 249 249 / 0.75);
   --clr-header-background-dark: rgba(0 0 0 / 0.75);
   --clr-theme: rgb(143, 57, 133);
@@ -22,7 +23,7 @@
   --initial-scale: 0.5;
   --final-scale: 1;
 
-  --animation-duration: 450ms;
+  --animation-duration: 600ms;
 }
 
 .dark {
@@ -46,6 +47,7 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: thin;
+  transition: color 350ms ease, background-color 350ms ease;
 }
 
 a {
@@ -126,6 +128,21 @@ h4 {
   gap: 1rem;
   min-width: 8rem;
   padding: 1rem 2rem;
+}
+
+.button-link i {
+  font-size: 1.5rem;
+}
+
+.button-boxed {
+  width: max-content;
+  padding: 0.6em 1em;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-link,
+.button-boxed {
   color: var(--clr-text-light);
   background-color: var(--clr-theme);
   border: 2px solid transparent;
@@ -133,13 +150,14 @@ h4 {
     border 200ms linear;
 }
 
-.button-link i {
-  font-size: 1.5rem;
-}
-
-.button-link:hover {
+.button-link:hover,
+.button-boxed:hover {
   background-color: transparent;
   border: 2px solid var(--clr-theme);
+}
+
+.button-boxed:hover {
+  color: var(--clr-theme);
 }
 
 .boxed-title {

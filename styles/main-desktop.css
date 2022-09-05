@@ -1,7 +1,9 @@
 @media screen and (min-width: 1025px) {
-  .summary-content,
-  .skills-content {
-    padding: 4rem 0 7rem 0;
+  .page-content.summary-content,
+  .page-content.skills-content,
+  .page-content.portfolio-content,
+  .page-content.contact-content {
+    padding: 7rem 0;
   }
 
   .summary-content .hero-section {

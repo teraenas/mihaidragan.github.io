@@ -1,9 +1,11 @@
-/* SUMMARY PAGE */
-
-.summary-content,
-.skills-content {
-  padding: 2rem 0 7rem 0;
+.page-content.summary-content,
+.page-content.skills-content,
+.page-content.portfolio-content,
+.page-content.contact-content {
+  padding: 4rem 0 7rem 0;
 }
+
+/* SUMMARY PAGE */
 
 .hero-section {
   display: flex;
@@ -108,7 +110,7 @@
   margin-top: 6rem;
 }
 
-.heading-wrapper .styled-title {
+.skills-content .heading-wrapper .styled-title {
   margin-inline: auto 3rem;
 }
 
@@ -173,4 +175,108 @@
 
 :not(.split) + .view .skill__level-fill {
   width: 8%;
+}
+
+/* PORTFOLIO PAGE */
+
+.portfolio-content .heading-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+}
+
+.portfolio-item__image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-item__description {
+  padding: 1rem 0;
+}
+
+.portfolio-item__description .button-link {
+  margin-top: 1rem;
+  padding: 0.3rem 0.5rem;
+}
+
+/* CONTACT PAGE */
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.contact-content .message {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-content .message h3 {
+  margin-bottom: 0.2em;
+  color: var(--clr-accent-secondary);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 460px;
+  padding: 2rem;
+  color: var(--clr-text-dark);
+  background-color: var(--clr-bg-light);
+  border-radius: 8px;
+}
+
+.light .contact-form {
+  box-shadow: 10px 10px 40px rgba(0 0 0 / 0.2);
+}
+
+.dark .contact-form {
+  background-color: var(--clr-bg-light);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  border: 2px solid var(--clr-border-light);
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-content .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-content .social-links h2 {
+  flex-basis: 100%;
+  text-align: center;
 }
