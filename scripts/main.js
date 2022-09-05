@@ -32,13 +32,10 @@ const initTheme = () => {
 
 const setTheme = theme => {
   localStorage.setItem('theme', theme);
-  // const indicator = document.getElementById('theme-switcher__indicator');
   if (theme === 'light') {
     document.body.classList.replace('dark', 'light');
-    // indicator.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
     document.body.classList.replace('light', 'dark');
-    // indicator.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 };
 
