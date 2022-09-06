@@ -18,7 +18,7 @@
     <script src="./scripts/main.js" defer></script>
     <script src="./scripts/view.js"></script>
     <script src="./scripts/scrollProgressNavigation.js"></script>
-    <title>Resume</title>
+    <title>Resume - Mihai Dragan</title>
 </head>
 
 <body class="light">
@@ -328,19 +328,23 @@
                                 <p>+40 769 61 02 43</p>
                             </div>
                         </div>
-                        <form class="contact-form">
+                        <form class="contact-form" action="https://formsubmit.co/mihai.dragan85@gmail.com"
+                            method="POST">
                             <h3>Message me</h3>
+                            <input type="hidden" name="_next" value="https://mihaidragan.eu/thankyou.html">
+                            <input type="hidden" name="_subject" value="New message from your resume app!">
                             <div class="name-input">
                                 <label for="name-input">Your name</label>
-                                <input id="name-input" type="text" placeholder="eg. John Doe">
+                                <input id="name-input" type="text" name="name" required placeholder="eg. John Doe">
                             </div>
                             <div class="email-input">
                                 <label for="email-input">Your email</label>
-                                <input id="email-input" type="text" placeholder="eg. johndoe@domain.com">
+                                <input id="email-input" type="email" name="email" required
+                                    placeholder="eg. johndoe@domain.com">
                             </div>
                             <div class="message-input">
                                 <label for="message-input">Your message</label>
-                                <textarea id="message-input" name="message-input" id="" cols="30" rows="5"
+                                <textarea id="message-input" name="message" required cols="30" rows="5"
                                     placeholder="How can I help you?"></textarea>
                             </div>
                             <button class="button-boxed" type="submit">Send Message</button>
