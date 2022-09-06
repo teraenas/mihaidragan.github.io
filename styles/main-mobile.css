@@ -279,3 +279,23 @@
   flex-basis: 100%;
   text-align: center;
 }
+
+/* THANK YOU PAGE */
+
+.thankyou-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+#redirect-seconds {
+  font-weight: 700;
+  color: var(--clr-theme);
+}
+
+#manual-redirect-btn {
+  margin-block-start: 1.5rem;
+}
