@@ -1,5 +1,6 @@
 const redirectTimer = document.getElementById('redirect-seconds');
 const manualRedirectButton = document.getElementById('manual-redirect-btn');
+const translator = new Translator();
 let redirectTime = 5;
 redirectTimer.innerText = redirectTime;
 
@@ -17,7 +18,10 @@ const setTheme = theme => {
   }
 };
 
-addEventListener('DOMContentLoaded', initTheme);
+addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  translator.translate();
+});
 
 manualRedirectButton.addEventListener('click', () => {
   location.replace('https://mihaidragan.eu');

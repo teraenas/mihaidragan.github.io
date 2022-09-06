@@ -2,12 +2,17 @@
 
 let views = [];
 let mainNav;
+const translator = new Translator();
 
 const mainContainer = document.querySelector('main');
 const header = document
   .querySelector('.main-header')
   .querySelector('.container');
 const themeSwitcher = document.getElementById('theme-switcher__check');
+const languageSwitcher = document.getElementById('language-switcher__check');
+const languageIndicator = document.getElementById(
+  'language-switcher__indicator'
+);
 
 const observer = new IntersectionObserver(
   entries => {
@@ -39,6 +44,11 @@ const setTheme = theme => {
   }
 };
 
+const initLanguageSwitcher = () => {
+  languageSwitcher.checked = translator.language === 'en' ? true : false;
+  languageIndicator.innerHTML = translator.language;
+};
+
 addEventListener('DOMContentLoaded', () => {
   const viewNodes = [...document.querySelectorAll('.view')];
 
@@ -56,10 +66,20 @@ addEventListener('DOMContentLoaded', () => {
   );
 
   mainNav = new ScrollProgressNavigation(header);
+
   initTheme();
+
+  translator.translate();
+  initLanguageSwitcher();
+
   scrollTo(0, 0);
 });
 
 themeSwitcher.addEventListener('click', e => {
   setTheme(e.target.checked === true ? 'dark' : 'light');
+});
+
+languageSwitcher.addEventListener('click', e => {
+  translator.setLanguage(e.target.checked === true ? 'en' : 'ro');
+  languageIndicator.innerHTML = translator.language;
 });

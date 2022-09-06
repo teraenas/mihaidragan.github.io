@@ -29,6 +29,10 @@
   gap: 1.6rem;
 }
 
+#main-nav li a {
+  text-transform: uppercase;
+}
+
 .display-area {
   position: fixed;
   inset: 0;

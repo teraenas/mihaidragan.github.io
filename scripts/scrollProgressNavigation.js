@@ -30,6 +30,10 @@ class ScrollProgressNavigation {
       const navItem = document.createElement('li');
       const navLink = document.createElement('a');
       navLink.setAttribute('href', `#${view.scrollArea.id}`);
+      navLink.setAttribute(
+        'translateid',
+        view.view.getAttribute('linktranslateid')
+      );
       navLink.innerText = `${view.view.getAttribute('link')}`;
       navItem.appendChild(navLink);
       this.links.push(navLink);
