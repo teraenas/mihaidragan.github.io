@@ -35,7 +35,7 @@ class View {
     scrollArea.className = 'scroll-area';
     scrollArea.setAttribute('id', this.view.getAttribute('link').toLowerCase());
     scrollArea.setAttribute('observer-data', `${this.id}`);
-    mainContainer.appendChild(scrollArea);
+    document.body.appendChild(scrollArea);
     return scrollArea;
   }
 

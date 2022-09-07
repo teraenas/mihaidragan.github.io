@@ -1,7 +1,7 @@
 class ScrollProgressNavigation {
   constructor(parent) {
     this.parent = parent;
-    this.mainContainer = document.createElement('div');
+    this.container = document.createElement('div');
     this.mainNav = document.createElement('ul');
     this.links = [];
     this.bar = document.createElement('div');
@@ -15,13 +15,13 @@ class ScrollProgressNavigation {
   }
 
   #init() {
-    this.mainContainer.setAttribute('id', 'main-nav-container');
-    this.parent.appendChild(this.mainContainer);
+    this.container.setAttribute('id', 'main-nav-container');
+    this.parent.appendChild(this.container);
     this.mainNav.setAttribute('id', 'main-nav');
-    this.mainContainer.appendChild(this.mainNav);
+    this.container.appendChild(this.mainNav);
     this.bar.setAttribute('id', 'scroll-progress-bar');
     this.fill.setAttribute('id', 'scroll-progress-fill');
-    this.mainContainer.appendChild(this.bar);
+    this.container.appendChild(this.bar);
     this.bar.appendChild(this.fill);
   }
 
@@ -30,11 +30,21 @@ class ScrollProgressNavigation {
       const navItem = document.createElement('li');
       const navLink = document.createElement('a');
       navLink.setAttribute('href', `#${view.scrollArea.id}`);
-      navLink.setAttribute(
-        'translateid',
-        view.view.getAttribute('linktranslateid')
-      );
-      navLink.innerText = `${view.view.getAttribute('link')}`;
+      view.view.getAttribute('linktranslateid') &&
+        navLink.setAttribute(
+          'translateid',
+          view.view.getAttribute('linktranslateid')
+        );
+      navLink.innerText = view.view.getAttribute('link');
+
+      navLink.addEventListener('click', e => {
+        e.preventDefault();
+        scrollTo({
+          top: view.scrollArea.offsetTop,
+          behavior: 'smooth',
+        });
+      });
+
       navItem.appendChild(navLink);
       this.links.push(navLink);
       this.mainNav.appendChild(navItem);

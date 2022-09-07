@@ -2,12 +2,14 @@
   position: fixed;
   left: 0;
   bottom: 15px;
-  padding: 10px;
+  padding-left: 10px;
   background-color: var(--clr-background);
   border-top: 1px solid var(--clr-border);
   border-right: 1px solid var(--clr-border);
   border-bottom: 1px solid var(--clr-border);
-  transition: left 300ms cubic-bezier(0.86, 0, 0.07, 1);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: left 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #app-tools.retracted {
@@ -15,17 +17,11 @@
 }
 
 #app-tools__toggle {
-  position: absolute;
   width: 38px;
-  height: 62px;
-  bottom: -1px;
-  right: -38px;
+  height: 50px;
+  margin: 8px 0;
   background-color: var(--clr-background);
-  border-top: 1px solid var(--clr-border);
-  border-right: 1px solid var(--clr-border);
-  border-bottom: 1px solid var(--clr-border);
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-left: 1px solid var(--clr-border);
 }
 
 #app-tools__toggle-btn {

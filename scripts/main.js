@@ -4,7 +4,6 @@ let views = [];
 let mainNav;
 const translator = new Translator();
 
-const mainContainer = document.querySelector('main');
 const header = document
   .querySelector('.main-header')
   .querySelector('.container');
