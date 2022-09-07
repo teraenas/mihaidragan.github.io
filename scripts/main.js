@@ -13,6 +13,8 @@ const languageSwitcher = document.getElementById('language-switcher__check');
 const languageIndicator = document.getElementById(
   'language-switcher__indicator'
 );
+const appTools = document.getElementById('app-tools');
+const toolsToggle = document.getElementById('app-tools__toggle-btn');
 
 const observer = new IntersectionObserver(
   entries => {
@@ -82,4 +84,11 @@ themeSwitcher.addEventListener('click', e => {
 languageSwitcher.addEventListener('click', e => {
   translator.setLanguage(e.target.checked === true ? 'en' : 'ro');
   languageIndicator.innerHTML = translator.language;
+});
+
+toolsToggle.addEventListener('click', () => {
+  appTools.classList.toggle('retracted');
+  toolsToggle.innerHTML = appTools.className.includes('retracted')
+    ? '<i class="iconfont-cog"></i>'
+    : '<i class="iconfont-cancel-circled"></i>';
 });

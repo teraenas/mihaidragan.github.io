@@ -9,7 +9,7 @@
   --clr-header-background-light: rgba(250 249 249 / 0.75);
   --clr-header-background-dark: rgba(0 0 0 / 0.75);
   --clr-theme: rgb(143, 57, 133);
-  --clr-accent: rgb(7, 190, 184);
+  --clr-accent: rgb(0, 148, 198);
   --clr-accent-secondary: rgb(249, 166, 32);
   --clr-text-light: rgb(250, 249, 249);
   --clr-text-neutral: rgb(155, 155, 155);
@@ -46,8 +46,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: thin;
   transition: color 350ms ease, background-color 350ms ease;
+}
+
+div,
+article,
+section {
+  scrollbar-width: thin;
 }
 
 a {
