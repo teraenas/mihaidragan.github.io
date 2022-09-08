@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="./styles/main-desktop.css">
     <link rel="stylesheet" href="./styles/icon-font.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="./scripts/main.js" defer></script>
     <script src="./scripts/view.js"></script>
     <script src="./scripts/scrollProgressNavigation.js"></script>
     <script src="./scripts/translator.js"></script>
+    <script src="./scripts/notifications.js"></script>
+    <script src="./scripts/email.js"></script>
     <title translateid="6da7d905-5ea0-4e93-92ba-e48637805d25">Resume - Mihai Dragan</title>
 </head>
 
@@ -353,7 +357,7 @@
             <div class="view" link="Contact" linktranslateid="8b3e0a86-f0a3-47c9-880a-765c422d7884">
                 <div class="content">
                     <article class="page-content container contact-content">
-                        <div class="message">
+                        <div class="contact-message">
                             <div class="styled-title">
                                 <h2 class="headline" translateid="332a3ea0-3745-4b21-8855-765ddc44df91">
                                     Get in touch
@@ -374,37 +378,36 @@
                                 <p>+40 769 61 02 43</p>
                             </div>
                         </div>
-                        <form class="contact-form" action="https://formsubmit.co/30512d9dea62e68d6383e5520082febb"
-                            method="POST">
+                        <form id="contact-form">
                             <h3 translateid="bca30391-79df-43bc-ab64-e9c9b96b9a77">
                                 Message me
                             </h3>
-                            <input type="hidden" name="_next" value="https://mihaidragan.eu/thankyou.html">
-                            <input type="hidden" name="_subject" value="New message from your resume app!">
                             <div class="name-input">
                                 <label for="name-input" translateid="35024ca4-e9a9-451b-b820-8a699294cf74">
                                     Your name
                                 </label>
-                                <input id="name-input" type="text" name="Name" required placeholder="eg. John Doe">
+                                <input id="name-input" type="text" name="name" required placeholder="eg. John Doe">
                             </div>
                             <div class="email-input">
                                 <label for="email-input" translateid="e5b78a2e-4ba7-4edb-930e-2e737e55bac6">
                                     Your email
                                 </label>
-                                <input id="email-input" type="email" name="Email" required
+                                <input id="email-input" type="email" name="email" required
                                     placeholder="eg. johndoe@domain.com">
                             </div>
                             <div class="message-input">
                                 <label for="message-input" translateid="9ffe235a-de15-4c8f-afe3-2d8d2a351ddc">
                                     Your message
                                 </label>
-                                <textarea id="message-input" name="Message" required cols="30" rows="5"
+                                <textarea id="message-input" name="message" required cols="30" rows="5"
                                     placeholder="How can I help you?"></textarea>
                             </div>
-                            <button class="button-boxed" type="submit"
+                            <div class="g-recaptcha" data-sitekey="6Lf5IcoSAAAAAD2u1eFOe4edf7fqPovgRaC9zR4A"></div>
+                            <button id="submit-button" class="button-boxed" type="submit"
                                 translateid="aa974fac-9a43-4ed2-9eb6-a2192f95a6c7">
                                 Send Message
                             </button>
+                            <div id="submit-message"></div>
                         </form>
                         <div class="social-links">
                             <h2 translateid="a9080662-a2bd-435b-8ed6-4ded1495df5f">You can also find me on</h2>

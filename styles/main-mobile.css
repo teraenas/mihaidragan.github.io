@@ -220,45 +220,45 @@
   justify-content: center;
 }
 
-.contact-content .message {
+.contact-content .contact-message {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
 }
 
-.contact-content .message h3 {
+.contact-content .contact-message h3 {
   margin-bottom: 0.2em;
   text-transform: uppercase;
   color: var(--clr-accent-secondary);
 }
 
-.contact-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 460px;
+  width: 420px;
   padding: 2rem;
   color: var(--clr-text-dark);
   background-color: var(--clr-bg-light);
   border-radius: 8px;
 }
 
-.light .contact-form {
+.light #contact-form {
   box-shadow: 10px 10px 40px rgba(0 0 0 / 0.2);
 }
 
-.dark .contact-form {
+.dark #contact-form {
   background-color: var(--clr-bg-light);
 }
 
-.contact-form label {
+#contact-form label {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+#contact-form input,
+#contact-form textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   font: inherit;
@@ -266,8 +266,16 @@
   border-radius: 4px;
 }
 
-.contact-form textarea {
+#contact-form textarea {
   resize: vertical;
+}
+
+#contact-form #submit-button:disabled,
+#contact-form #submit-button:disabled:hover {
+  color: var(--clr-text-light);
+  background-color: var(--clr-text-neutral);
+  border: 2px solid transparent;
+  transition: none;
 }
 
 .contact-content .social-links {
@@ -280,24 +288,4 @@
 .contact-content .social-links h2 {
   flex-basis: 100%;
   text-align: center;
-}
-
-/* THANK YOU PAGE */
-
-.thankyou-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
-
-#redirect-seconds {
-  font-weight: 700;
-  color: var(--clr-theme);
-}
-
-#manual-redirect-btn {
-  margin-block-start: 1.5rem;
 }

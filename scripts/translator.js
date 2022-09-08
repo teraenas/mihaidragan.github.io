@@ -28,7 +28,27 @@ class Translator {
     });
   }
 
+  translateTerm(term) {
+    return (
+      this.#translationData[term]?.[this.language] || 'No content available'
+    );
+  }
+
   #translationData = {
+    // specific terms
+    'sending-status': {
+      en: 'Sending...',
+      ro: 'Se Trimite...',
+    },
+    'message-submit-success': {
+      en: 'Thank You. Your message was sent successfully.',
+      ro: 'Îți mulțumesc. Mesajul a fost trimis cu succes.',
+    },
+    'message-submit-error': {
+      en: 'There was an error while sending your message. Please try again later.',
+      ro: 'Am întâmpinat o eroare la trimiterea mesajului. Te rog să încerci mai târziu.',
+    },
+    // main nav menu
     '4ce64fe3-f9e4-4d2d-af63-c0dbbaf58742': {
       en: 'Summary',
       ro: 'Rezumat',
@@ -45,10 +65,12 @@ class Translator {
       en: 'Contact',
       ro: 'Contact',
     },
+    // buttons
     'visit-btn': {
       en: 'Visit',
       ro: 'Accesează',
     },
+    // ids
     '6da7d905-5ea0-4e93-92ba-e48637805d25': {
       en: 'Resume - Mihai Dragan',
       ro: 'Curriculum Vitae - Mihai Dragan',
@@ -172,23 +194,6 @@ class Translator {
     'a9080662-a2bd-435b-8ed6-4ded1495df5f': {
       en: 'You can also find me on',
       ro: 'Mă poți găsi și pe',
-    },
-    // thankyou.html translation
-    'ecfa6442-7d74-4ae5-aa60-1f29d6e66dd4': {
-      en: 'Resume - Mihai Drăgan - Thank you for your message',
-      ro: 'Curriculum Vitae - Mihai Drăgan - Îți mulțumesc pentru mesaj',
-    },
-    'c2e3b82e-18f1-4e02-8566-ae675bae7c39': {
-      en: 'Thank you for your message.',
-      ro: 'Îți mulțumesc pentru mesaj.',
-    },
-    'e421cf95-a139-4ac1-8170-901d84a24e78': {
-      en: 'You will be redirected to the main page in ',
-      ro: 'Vei fi redirecționat la pagina principală în ',
-    },
-    '79edb693-1584-4047-ac5d-98021624db85': {
-      en: 'Return to Main Page',
-      ro: 'Întoarce-te la pagina principală',
     },
   };
 }

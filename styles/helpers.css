@@ -99,3 +99,18 @@
   text-transform: uppercase;
   color: var(--clr-accent-secondary);
 }
+
+.error,
+.success {
+  padding: 1rem;
+}
+
+.error {
+  color: var(--clr-accent-secondary);
+  border: 2px solid var(--clr-accent-secondary);
+}
+
+.success {
+  color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+}
