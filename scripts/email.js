@@ -43,8 +43,8 @@ window.onload = function () {
       submitButton.removeAttribute('style');
       submitButton.removeAttribute('disabled');
 
-      this.addEventListener(
-        'focusout',
+      document.documentElement.addEventListener(
+        'click',
         () => {
           clearNotification(submitMessage);
         },
