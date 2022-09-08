@@ -25,6 +25,7 @@ window.onload = function () {
       try {
         await emailjs.sendForm(serviceID, templateID, this);
         this.reset();
+        grecaptcha.reset();
         createNotification(
           submitMessage,
           'success',
