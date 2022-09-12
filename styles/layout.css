@@ -103,26 +103,6 @@
     cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-@keyframes current-view {
-  0% {
-    transform: scale(var(--initial-scale));
-  }
-
-  100% {
-    transform: scale(var(--final-scale));
-  }
-}
-
-@keyframes reset-view {
-  0% {
-    transform: scale(var(--final-scale));
-  }
-
-  100% {
-    transform: scale(var(--initial-scale));
-  }
-}
-
 @keyframes split-left {
   0% {
     opacity: 1;
